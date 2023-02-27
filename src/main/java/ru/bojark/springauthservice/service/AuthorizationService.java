@@ -1,18 +1,17 @@
 package ru.bojark.springauthservice.service;
 
 import org.springframework.stereotype.Service;
-import ru.bojark.springauthservice.domain.User;
 import ru.bojark.springauthservice.exception.InvalidCredentials;
 import ru.bojark.springauthservice.exception.UnauthorizedUser;
 import ru.bojark.springauthservice.misc.Authorities;
 import ru.bojark.springauthservice.repository.UserRepository;
 
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class AuthorizationService {
     UserRepository userRepository;
+
     public AuthorizationService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
