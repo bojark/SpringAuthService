@@ -15,7 +15,9 @@ public class UserRepository {
     private final Map<User, List<Authorities>> users = new ConcurrentHashMap<>();
 
     {
-        users.put(new User("<ИМЯ_ЮЗЕРА>", "<ПАРОЛЬ_ЮЗЕРА>"), List.of(Authorities.WRITE, Authorities.DELETE));
+        users.put(new User("user", "password"), List.of(Authorities.WRITE, Authorities.READ));
+        users.put(new User("admin", "admin"), List.of(Authorities.values()));
+        users.put(new User("user1", "qwerty"), List.of(Authorities.READ));
     }
 
     public List<Authorities> getUserAuthorities(String name, String password) {
